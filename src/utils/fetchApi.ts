@@ -1,9 +1,5 @@
 import axios from 'axios';
-import {
-  SearchList,
-  SuggestedVideosResponse,
-  VideoListResponse,
-} from 'interfaces';
+import { SearchList, VideoListResponse } from 'interfaces';
 
 const BASE_URL = 'https://youtube-v31.p.rapidapi.com';
 
