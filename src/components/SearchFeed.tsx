@@ -1,10 +1,10 @@
 import { Box, Typography, Stack, CircularProgress } from '@mui/material';
 
-import { Videos } from './Videos';
-
 import { fetchSearchList } from 'utils';
 import { useQuery } from '@tanstack/react-query';
 import { useParams } from 'react-router-dom';
+
+import { Videos } from './Videos';
 
 export const SearchFeed = () => {
   const { searchTerm } = useParams();

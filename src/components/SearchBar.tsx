@@ -24,6 +24,7 @@ export const SearchBar = () => {
       component='form'
       onSubmit={handleSubmit}
       sx={{
+        width: { xs: '200px', sm: '40%' },
         borderRadius: 20,
         border: '1px solid #e3e3e3',
         pl: 2,
@@ -38,6 +39,7 @@ export const SearchBar = () => {
         onChange={e => {
           setSearchTerm(e.target.value);
         }}
+        style={{ width: 'calc(100% - 50px)' }}
       />
       <IconButton type='submit' sx={{ p: '10px', color: 'red' }}>
         <SearchOutlined />

@@ -28,7 +28,7 @@ export const VideoCard: FC<Props> = ({ video }) => {
       <CardContent sx={{ backgroundColor: '#1e1e1e', height: '106px' }}>
         <Link to={`/video/${videoId}`}>
           <Typography fontWeight='bold' variant='subtitle1' color='white'>
-            {title}
+            {title.substring(0, 50) + '...'}
           </Typography>
         </Link>
         <Link to={`/channel/${channelId}`}>
