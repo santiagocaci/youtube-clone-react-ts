@@ -4,23 +4,24 @@ import { Link } from 'react-router-dom';
 import { Typography, Card, CardContent, CardMedia } from '@mui/material';
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 
-import { SearchItem } from 'interfaces';
+import type { ID, SearchItem } from 'interfaces';
 
 interface Props {
   video: SearchItem;
 }
 
 export const VideoCard: FC<Props> = ({ video }) => {
-  const { videoId } = video.id;
+  const { videoId } = video.id as ID;
+
   const { thumbnails, title, channelId, channelTitle } = video.snippet;
 
   return (
-    <Card sx={{ width: 358, borderRadius: 0 }}>
+    <Card sx={{ width: { xs: '320px', md: '320px' }, borderRadius: 0 }}>
       <Link to={`/video/${videoId}`}>
         <CardMedia
           component='img'
           alt={title}
-          sx={{ width: 358, height: 200 }}
+          sx={{ width: 320, height: 200 }}
           image={thumbnails.high.url}
         />
       </Link>

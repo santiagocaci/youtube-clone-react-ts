@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 
 import { Box, Typography, Stack, CircularProgress } from '@mui/material';
 
@@ -27,13 +27,13 @@ export const Feed = () => {
         <Sidebar category={category} setCategory={setCategory} />
       </Box>
       <Box
-        m={2}
+        m={{ xs: 0, md: 2 }}
         sx={{
           height: {
-            xs: 'calc(100vh - 179px)',
+            xs: '100%',
             md: 'calc(100vh - 110px)',
           },
-          width: { xs: 'calc(100% - 30px)', md: '100%' },
+          width: { xs: '100%', md: '100%' },
           overflowY: 'auto',
         }}
       >
@@ -43,8 +43,8 @@ export const Feed = () => {
         {isLoading ? (
           <Box
             sx={{
-              height: 'calc(100% - 42px)',
-              width: '100%',
+              // height: 'calc(100% - 62px)',
+              // width: '100%',
               display: 'flex',
               justifyContent: 'center',
               alignItems: 'center',

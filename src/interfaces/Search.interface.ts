@@ -32,7 +32,7 @@ interface PageInfo {
   resultsPerPage: number;
 }
 
-interface ID {
+export interface ID {
   kind: IDKind;
   videoId?: string;
   playlistId?: string;
@@ -64,7 +64,7 @@ interface BrandingSettings {
 
 export interface SearchItem {
   kind: ItemKind;
-  id: ID;
+  id: ID | string;
   snippet: Snippet;
   statistics?: Statistics;
   brandingSettings?: BrandingSettings;

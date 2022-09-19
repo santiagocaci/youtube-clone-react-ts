@@ -2,29 +2,43 @@ import { FC, useMemo } from 'react';
 
 import { Stack, Box } from '@mui/material';
 
-import { SearchItem } from 'interfaces';
+import { ID, SearchItem } from 'interfaces';
 import { ChannelCard } from './ChannelCard';
 import { VideoCard } from './VideoCard';
 
 interface Props {
   videos: SearchItem[];
+  direction?: 'row' | 'row-reverse' | 'column' | 'column-reverse';
 }
 
-export const Videos: FC<Props> = ({ videos }) => {
+export const Videos: FC<Props> = ({ videos, direction = 'row' }) => {
   const filterVideosAndChannel = useMemo(
-    () => videos.filter(item => item.id.channelId || item.id.videoId),
+    () =>
+      videos.filter(item => {
+        const { channelId, videoId } = item.id as ID;
+        if (channelId || videoId) return item;
+        return undefined;
+      }),
     [videos]
   );
 
   return (
-    <Stack direction='row' flexWrap='wrap' justifyContent='center' gap={2}>
-      {filterVideosAndChannel.map((item, idx) => (
-        <Box key={idx}>
-          {item.id.videoId && <VideoCard video={item} />}
-          {item.id.channelId && <ChannelCard channel={item} />}
-          {item.id.playlistId && <>popo</>}
-        </Box>
-      ))}
+    <Stack
+      direction={direction}
+      flexWrap='wrap'
+      justifyContent='center'
+      alignItems='center'
+      gap={2}
+    >
+      {filterVideosAndChannel.map((item, idx) => {
+        const { channelId, videoId } = item.id as ID;
+        return (
+          <Box key={idx}>
+            {videoId && <VideoCard video={item} />}
+            {channelId && <ChannelCard channel={item} />}
+          </Box>
+        );
+      })}
     </Stack>
   );
 };
