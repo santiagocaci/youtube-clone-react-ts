@@ -14,6 +14,8 @@ import DeveloperModeIcon from '@mui/icons-material/DeveloperMode';
 
 export const logo = 'https://i.ibb.co/s9Qys2j/logo.png';
 
+export const PROJECT_NAME = 'youtube-clone-react-ts';
+
 export const categories = [
   { name: 'New', icon: <HomeIcon /> },
   { name: 'Coding', icon: <CodeIcon /> },

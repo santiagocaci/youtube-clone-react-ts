@@ -5,6 +5,7 @@ import { Typography, Card, CardContent, CardMedia } from '@mui/material';
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 
 import type { ID, SearchItem } from 'interfaces';
+import { PROJECT_NAME } from 'utils';
 
 interface Props {
   video: SearchItem;
@@ -17,7 +18,7 @@ export const VideoCard: FC<Props> = ({ video }) => {
 
   return (
     <Card sx={{ width: { xs: '320px', md: '320px' }, borderRadius: 0 }}>
-      <Link to={`/video/${videoId}`}>
+      <Link to={`/${PROJECT_NAME}/video/${videoId}`}>
         <CardMedia
           component='img'
           alt={title}
@@ -26,12 +27,12 @@ export const VideoCard: FC<Props> = ({ video }) => {
         />
       </Link>
       <CardContent sx={{ backgroundColor: '#1e1e1e', height: '106px' }}>
-        <Link to={`/video/${videoId}`}>
+        <Link to={`/${PROJECT_NAME}/video/${videoId}`}>
           <Typography fontWeight='bold' variant='subtitle1' color='white'>
             {title.substring(0, 50) + '...'}
           </Typography>
         </Link>
-        <Link to={`/channel/${channelId}`}>
+        <Link to={`/${PROJECT_NAME}/channel/${channelId}`}>
           <Typography
             variant='subtitle2'
             color='gray'
