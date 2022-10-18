@@ -9,7 +9,6 @@ import {
   SearchFeed,
   VideoDetail,
 } from 'components';
-import { PROJECT_NAME } from 'utils';
 
 function App() {
   return (
@@ -17,19 +16,10 @@ function App() {
       <Box sx={{ backgroundColor: '#000' }}>
         <Navbar />
         <Routes>
-          <Route path={`/${PROJECT_NAME}`} element={<Feed />} />
-          <Route
-            path={`/${PROJECT_NAME}/video/:id`}
-            element={<VideoDetail />}
-          />
-          <Route
-            path={`/${PROJECT_NAME}/channel/:id`}
-            element={<ChannelDetail />}
-          />
-          <Route
-            path={`/${PROJECT_NAME}/search/:searchTerm`}
-            element={<SearchFeed />}
-          />
+          <Route path={`/`} element={<Feed />} />
+          <Route path={`/video/:id`} element={<VideoDetail />} />
+          <Route path={`/channel/:id`} element={<ChannelDetail />} />
+          <Route path={`/search/:searchTerm`} element={<SearchFeed />} />
         </Routes>
       </Box>
     </BrowserRouter>

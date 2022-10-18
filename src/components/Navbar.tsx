@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import { Stack } from '@mui/material';
-import { logo, PROJECT_NAME } from 'utils';
+import { logo } from 'utils';
 import { SearchBar } from './SearchBar';
 
 export const Navbar = () => {
@@ -13,10 +13,7 @@ export const Navbar = () => {
       p={2}
       sx={{ backgroundColor: '#000', top: 0, zIndex: 1 }}
     >
-      <Link
-        to={`/${PROJECT_NAME}`}
-        style={{ display: 'flex', alignItems: 'center' }}
-      >
+      <Link to={`/`} style={{ display: 'flex', alignItems: 'center' }}>
         <img src={logo} alt='logo' height={45} />
       </Link>
       <SearchBar />

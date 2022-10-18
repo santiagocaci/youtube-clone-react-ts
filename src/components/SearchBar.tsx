@@ -8,7 +8,6 @@ import { Paper, IconButton } from '@mui/material';
 import { SearchOutlined } from '@mui/icons-material';
 
 import 'index.css';
-import { PROJECT_NAME } from 'utils';
 
 export const SearchBar = () => {
   const [searchTerm, setSearchTerm] = useState('');
@@ -17,7 +16,7 @@ export const SearchBar = () => {
 
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
-    navigate(`/${PROJECT_NAME}/search/${searchTerm}`);
+    navigate(`/search/${searchTerm}`);
     setSearchTerm('');
   };
 
