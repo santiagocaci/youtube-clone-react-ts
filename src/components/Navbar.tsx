@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { Stack } from '@mui/material';
+import { Stack, Typography } from '@mui/material';
 import { logo } from 'utils';
 import { SearchBar } from './SearchBar';
 
@@ -16,6 +16,19 @@ export const Navbar = () => {
       <Link to={`/`} style={{ display: 'flex', alignItems: 'center' }}>
         <img src={logo} alt='logo' height={45} />
       </Link>
+      <Typography
+        ml={{ xs: 0, sm: 1 }}
+        variant='h6'
+        sx={{
+          display: { xs: 'none', sm: 'block' },
+          fontSize: { xs: '16px' },
+          flexGrow: 1,
+          alignSelf: 'flex-end',
+          color: 'gray',
+        }}
+      >
+        By Santiago Caci
+      </Typography>
       <SearchBar />
     </Stack>
   );

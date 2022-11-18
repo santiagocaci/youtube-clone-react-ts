@@ -13,7 +13,6 @@ interface Props {
 export const ChannelCard: FC<Props> = ({ channel, imageSize = '250' }) => {
   const { channelId } = channel.id as ID;
   const { thumbnails, channelTitle, title } = channel.snippet;
-  console.log(thumbnails.medium.url);
 
   return (
     <Box
